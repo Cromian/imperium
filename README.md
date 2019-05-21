@@ -1,2 +1,2 @@
-# imperium
-Simple elegant theme.
+# Imperium
+Simple elegant Drupal 8 theme.

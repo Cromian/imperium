@@ -1,0 +1,20 @@
+// Grid
+@mixin two-col($gap, $fr1, $fr2 ) {
+    display: grid;
+    grid-gap: $gap;
+    grid-template-columns: $fr1 $fr2;
+
+    @media screen and (max-width: $medium-break) {
+        grid-template-columns: 1fr;
+    }
+}
+
+@mixin three-col($gap, $fr1, $fr2, $fr3) {
+    display: grid;
+    grid-gap: $gap;
+    grid-template-columns: $fr1 $fr2 $fr3;
+
+    @media screen and (max-width: $medium-break) {
+        grid-template-columns: 1fr;
+    }
+}

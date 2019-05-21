@@ -1,0 +1,18 @@
+# imperium.info.yml
+name: Imperium
+type: theme
+description: 'A powerful yet elegant theme.'
+core: 8.x
+libraries:
+  - imperium/global-styling
+  - imperium/global-scripts
+base theme: classy
+regions:
+  super_top: 'Super Top'
+  navigation: 'Navigation'
+  messages: 'Messages'
+  banner: 'Banner'
+  featured_top: 'Featured Top'
+  content: 'Content'
+  featured_bottom: 'Featured bottom'
+  footer: 'Footer'

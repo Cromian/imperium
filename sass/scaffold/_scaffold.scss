@@ -1,0 +1,13 @@
+// Variables
+$base-font: 16px;
+$ratio: 1.618;
+$max-width: 1200px;
+
+// Individual card scss
+@import 'breakpoints';
+@import 'text';
+@import 'grid';
+
+html, body {
+    overflow-x: hidden !important;
+}

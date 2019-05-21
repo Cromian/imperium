@@ -1,0 +1,123 @@
+/** Varibles **/
+
+    $border-style: 1px solid #e6e6e6;
+    $fade: all 0.2s;
+    $shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.12);
+
+/** end **/
+
+/** Colors **/
+    
+    $dark-blue: #002037;
+    $blue: #072757;
+    $off-black: #333;
+    $bronze: #c5a87d;
+    $light-grey: #cccccc;
+    $off-grey: #f9f9f9;
+    $grey: #767676;
+    $red: #d01319;
+
+    // Links & Forms
+    $btn-blue: #27649e;
+
+    // Action Colors;
+    $color_link-hover: #8d98aa;
+
+/** end **/
+
+/** Type & Font **/
+    
+    @mixin body-font() {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+    }
+
+    @mixin heading-font() {
+        font-family: 'EB Garamond', serif;
+        font-weight: 400;
+    }
+
+    @mixin content-width() {
+        max-width: 55vw;
+        @media screen and (max-width: $medium-break) {
+            max-width: 95%;
+        }
+
+        display: block;
+        margin: auto;
+    }
+
+/** end **/
+
+/** Form & Input **/
+    
+    @mixin input-style {
+        border-radius: .30rem;
+        padding: .75rem 1.25rem;
+        border: 1px solid $light-grey;
+    }
+
+    @mixin button-style($prime_color, $hover_color, $font_color) {
+        @include input-style();
+        background-color: $prime_color;
+        color: $font_color;
+        cursor: pointer;
+        border: none;
+        transition: $fade;
+
+        &:hover {
+            background-color: $hover_color;
+        }
+    }
+
+/** end **/
+
+/** Sections & Regions **/
+@mixin section($color) {
+    background-color: $color;
+    padding: 3em;
+}
+
+@mixin white_tile {
+    background-color: #fff;
+    padding: 2em;
+    box-shadow: $shadow;
+    border: $border-style;
+
+    a {
+        color: $dark_blue;
+        text-decoration: underline;
+
+        &:hover {
+            color: $color_link-hover;
+            text-decoration: none;
+        }
+    }
+}
+
+/** end **/
+
+// Misc
+@mixin arrow_link($color) {
+
+    a {
+        text-decoration: none;
+
+        &:after {
+            transition: $fade;
+            display: inline-block;
+            font-family: "Font Awesome 5 Free";
+            content: "\f061";
+            color: $color;
+            margin-left: .5em;
+        }
+
+        &:hover {
+
+            &:after {
+                margin-left: .8em;
+            }
+
+        }
+    }
+}

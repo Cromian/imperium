@@ -1,0 +1,43 @@
+
+// Styles that relate to the drupal admin components.
+.tabs {
+    
+    ul {
+        border-bottom: 1px solid #e6e6e6;
+        margin-bottom: .75em;
+
+        li {
+            background-color: transparent;
+            margin-bottom: .5rem;
+
+            .is-active {
+                background-color: transparent;
+                color: $btn-blue;
+            }
+        }
+
+        a {
+            color: #565c65;
+            font-weight: 700;
+            font-size: 14px;
+    
+            &:hover {
+                background-color: transparent;
+                color: $btn-blue;
+            }
+        }
+    
+    }
+    
+}
+
+.field--type-comment {
+    max-width: 55vw;
+    display: block;
+    margin: auto;
+    
+    .filter-wrapper {
+        font-size: medium;
+    }
+
+}

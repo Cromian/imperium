@@ -1,0 +1,31 @@
+
+<?php
+
+/**
+ * hook_form_system_theme_settings_alter().
+ */
+function imperium_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+    
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $form['sub_title'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Sub Title'),
+    '#default_value' => theme_get_setting('sub_title'),
+    '#description'   => t("Enter the site sub title"),
+  );
+
+
+}
+
+/**
+ * hook_preprocess_node.
+ */
+function imperium_preprocess_page(&$variables) {
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+  $variables['sub_title'] = theme_get_setting('sub_title');
+
+}

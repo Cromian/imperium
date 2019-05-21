@@ -1,0 +1,264 @@
+@import 'https://use.fontawesome.com/releases/v5.8.2/css/all.css';
+@import 'vars-mix';
+@import 'drupal-items';
+@import 'scaffold/scaffold';
+
+// Core
+body {
+    @include body-font;
+    color: $off-black;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include heading-font;
+    @include content-width;
+    color: $off-black;
+    margin-bottom: .3em;
+  
+    a {
+        text-decoration: none !important;
+    }
+}
+
+input[type=submit], button, .btn {
+    @include button-style($btn-blue, $dark_blue, white)
+}
+
+input {
+    @include input-style;
+}
+
+a {
+    cursor: pointer;
+    transition: $fade;
+    color: $dark_blue;
+
+    &:hover {
+        text-decoration: none;
+        color: $color_link-hover;
+    }
+}
+
+p {
+    a {
+        font-weight: 600;
+        font-size: 90%;
+    }    
+}
+
+main {
+    padding-top: 2em;
+    padding-bottom: 3em;
+}
+
+.container {
+    max-width: $max-width;
+    width: 95%;
+    margin: auto;
+}
+
+// Regions:
+.layout-navigation {
+    text-transform: uppercase;
+    padding: 1.5em;
+    font-size: 70%;
+    font-weight: 600;
+    background-color: $dark_blue;
+
+    .region-navigation {
+        @include three-col(1%, .5fr, 1fr, .5fr);
+        align-items: center;
+
+    }
+
+    ul, ol {
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline;
+            margin-right: 1rem;
+        }
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            color: $color_link-hover;
+        }
+    }
+
+    .is-active {
+        color: $bronze !important;
+    }
+}
+
+.messages {
+    margin: 1em;
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.layout-featured_bottom {
+    @include section($off-grey);
+    border-top: $border-style;
+    border-bottom: $border-style;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    margin-bottom: -3em;
+    margin-top: 3em;
+
+    h1, h2, h3{
+        text-align: center;
+       
+        &:after {
+            content: "";
+            display: block;
+            margin: 0 auto;
+            width: 10%;
+            border-bottom: 2px solid $bronze;
+            margin-top: .3em;
+            margin-bottom: 1.5em;
+        }
+    }
+
+    .layout__region--content, .tile {
+        @include white_tile();
+        
+        h1, h2, h3 {
+            text-align: unset;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    text-transform: uppercase;
+    nav {
+        padding-bottom: 0;
+    }
+}
+
+.layout-footer {
+    @include section ($dark_blue);
+    font-size: 70%;
+    font-weight: 600;
+
+
+    h1,h2,h3,h4,h5,h6 {
+        color: unset;
+        max-width: unset;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            color: $color_link-hover;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    color: white;
+
+    .breadcrumb {
+        border-top: 1px solid #4c5d6e;
+        border-bottom: 1px solid #4c5d6e;
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+}
+
+
+// Misc Styles.
+.node__links {
+    @include content-width;
+    text-transform: uppercase;
+    font-size: 70%;
+    font-weight: 600;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 0;
+            margin: 0;
+            display: block;
+            letter-spacing: 1.2px;
+            margin-bottom: .3em;
+        }
+    }
+
+    .comment-forbidden, .comment-add {
+        font-weight: 400;
+        font-size: small;
+        letter-spacing: unset;
+        font-style: italic;
+
+    }
+
+    .node-readmore {
+        @include arrow_link($red);
+    }
+}
+
+.node__meta {
+    @include content-width;
+    text-transform: uppercase;
+    font-size: small;
+    font-weight: 400;
+
+    &:before {
+        position: relative;
+        content: '';
+        height: 2px;
+        width: 30px;
+        top: 12px;
+        background-color: $bronze;
+        margin-right: 15px;
+        float: left;
+    }
+}
+
+.views-row {
+    
+    article:last-child {
+        margin-bottom: 2em;
+        padding-bottom: 2em;
+        border-bottom: $border-style;
+    }
+
+    &:last-child {
+        article:last-child {
+            border: unset;
+            margin-bottom: unset;
+            padding-bottom: unset
+        }
+    }
+    
+}
+
+.cc {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: small;
+    font-weight: 600;
+
+    a {
+        color: $bronze;
+    }
+}
